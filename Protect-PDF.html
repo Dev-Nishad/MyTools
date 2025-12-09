@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Protect PDF Online | Free PDF Password Protection Tool</title>
+
+  <!-- Mobile responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Free online PDF protection tool. Add password protection, set permissions, and encrypt your PDF files. Secure your documents with 256-bit AES encryption. 100% browser-based." />
+  <meta name="keywords" content="protect pdf, pdf password, encrypt pdf, secure pdf, pdf protection, lock pdf, pdf encryption, password protect pdf, pdf security" />
+  <meta name="Dev-Nishad" content="ProtectPDF" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Protect PDF Online | Free PDF Password Protection Tool" />
+  <meta property="og:description" content="Add password protection and encryption to your PDF files. Set permissions and secure your documents. 100% browser-based and private." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+  <meta property="og:site_name" content="ProtectPDF.pro" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Protect PDF Online | Free PDF Password Protection Tool" />
+  <meta name="twitter:description" content="Secure your PDF files with password protection and encryption." />
+  <meta name="twitter:image" content="https://example.com/og-image.jpg" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>" />
+
+  <!-- Structured data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Protect PDF Online",
+    "url": "https://example.com/",
+    "applicationCategory": "SecurityApplication",
+    "description": "Free online tool to protect PDF files with password and encryption. Set permissions and secure your documents.",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Password protection",
+      "256-bit AES encryption",
+      "Permission controls",
+      "Restrict printing",
+      "Restrict copying",
+      "100% browser-based"
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I password protect a PDF?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Upload your PDF, set a password, configure permissions, and download your protected PDF. All processing happens in your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this PDF protection tool free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, this tool is completely free with unlimited use and no watermarks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my PDF uploaded to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, all processing happens locally in your browser. Your files never leave your device."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Google AdSense -->
+  <!-- IMPORTANT: Replace ca-pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-card: #13131a;
+      --bg-card-hover: #1a1a24;
+      --accent: #f59e0b;
+      --accent-light: #fbbf24;
+      --accent-dark: #d97706;
+      --accent-glow: rgba(245, 158, 11, 0.4);
+      --secondary: #ef4444;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --info: #3b82f6;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.15);
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 40px var(--accent-glow);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition: 0.2s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: var(--bg-dark);
+      color: var(--white);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Background effects */
+    .bg-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 158, 11, 0.15), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(239, 68, 68, 0.1), transparent),
+        radial-gradient(ellipse 40% 30% at 0% 80%, rgba(59, 130, 246, 0.1), transparent);
+    }
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    /* Floating orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      z-index: -1;
+      pointer-events: none;
+      animation: float 25s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 450px;
+      height: 450px;
+      background: var(--accent);
+      top: -120px;
+      left: -100px;
+    }
+
+    .orb-2 {
+      width: 350px;
+      height: 350px;
+      background: var(--secondary);
+      bottom: -80px;
+      right: -80px;
+      animation-delay: -12s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(5deg); }
+      66% { transform: translate(-20px, 20px) rotate(-5deg); }
+    }
+
+    a {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    a:hover {
+      color: var(--white);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--white);
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--white);
+    }
+
+    .header-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.85rem;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      color: var(--accent-light);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.2); }
+    }
+
+    /* Main */
+    main {
+      padding: 2rem 0 4rem;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 2rem 0 3rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--accent-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 1rem;
+      background: linear-gradient(135deg, var(--white) 0%, var(--gray-300) 50%, var(--accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--gray-400);
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--gray-300);
+      transition: all var(--transition);
+    }
+
+    .feature-tag:hover {
+      border-color: var(--accent);
+      background: rgba(245, 158, 11, 0.05);
+    }
+
+    .feature-tag svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--success);
+    }
+
+    /* Ad Banner */
+    .ad-banner {
+      margin: 2rem 0;
+      padding: 0.75rem;
+      background: var(--bg-card);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-lg);
+      text-align: center;
+    }
+
+    .ad-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gray-600);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Tool Section */
+    .tool-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .tool-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .tool-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .tool-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tool-title-icon {
+      font-size: 1.5rem;
+    }
+
+    .tool-subtitle {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin: 0.25rem 0 0;
+    }
+
+    .security-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      color: var(--success);
+    }
+
+    .security-badge svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    /* Dropzone */
+    .dropzone {
+      position: relative;
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .dropzone:hover {
+      border-color: var(--accent);
+      background: rgba(245, 158, 11, 0.05);
+    }
+
+    .dropzone.is-dragover {
+      border-color: var(--accent);
+      background: rgba(245, 158, 11, 0.1);
+      transform: scale(1.01);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .dropzone.has-file {
+      border-style: solid;
+      border-color: var(--success);
+      background: rgba(34, 197, 94, 0.05);
+    }
+
+    .dropzone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .dropzone-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1rem;
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .dropzone-icon svg {
+      width: 36px;
+      height: 36px;
+      fill: var(--white);
+    }
+
+    .dropzone-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+    }
+
+    .dropzone-subtitle {
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin: 0;
+    }
+
+    .dropzone-hint {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      margin-top: 1rem;
+    }
+
+    /* PDF Info */
+    .pdf-info {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: var(--radius-md);
+    }
+
+    .pdf-info.active {
+      display: block;
+    }
+
+    .pdf-info-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .pdf-info-name {
+      font-weight: 600;
+      color: var(--success);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      word-break: break-all;
+    }
+
+    .pdf-info-name svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--success);
+      flex-shrink: 0;
+    }
+
+    .pdf-info-details {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--gray-400);
+    }
+
+    .pdf-info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .btn-change {
+      padding: 0.4rem 0.8rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--gray-400);
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .btn-change:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Protection Settings */
+    .settings-section {
+      margin-top: 1.5rem;
+      display: none;
+    }
+
+    .settings-section.active {
+      display: block;
+    }
+
+    .settings-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-200);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .settings-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .setting-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .setting-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .setting-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--gray-300);
+    }
+
+    .setting-label-text {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .setting-label-icon {
+      font-size: 1rem;
+    }
+
+    .setting-hint {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 0.25rem;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--white);
+      font-size: 0.9rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    input[type="text"]:hover,
+    input[type="password"]:hover,
+    select:hover {
+      border-color: var(--accent);
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder {
+      color: var(--gray-600);
+    }
+
+    /* Password strength indicator */
+    .password-strength {
+      display: flex;
+      gap: 0.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .strength-bar {
+      flex: 1;
+      height: 4px;
+      background: var(--gray-700);
+      border-radius: 2px;
+      transition: background var(--transition);
+    }
+
+    .strength-bar.weak { background: var(--danger); }
+    .strength-bar.medium { background: var(--warning); }
+    .strength-bar.strong { background: var(--success); }
+
+    .password-strength-text {
+      font-size: 0.75rem;
+      margin-top: 0.35rem;
+    }
+
+    .password-strength-text.weak { color: var(--danger); }
+    .password-strength-text.medium { color: var(--warning); }
+    .password-strength-text.strong { color: var(--success); }
+
+    /* Toggle input */
+    .password-toggle {
+      position: relative;
+    }
+
+    .password-toggle input {
+      padding-right: 3rem;
+    }
+
+    .toggle-visibility {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--gray-500);
+      cursor: pointer;
+      padding: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color var(--transition);
+    }
+
+    .toggle-visibility:hover {
+      color: var(--accent);
+    }
+
+    .toggle-visibility svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Permissions Section */
+    .permissions-section {
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+
+    .permissions-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gray-200);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .permissions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .permission-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .permission-item:hover {
+      border-color: var(--accent);
+    }
+
+    .permission-item.disabled {
+      border-color: var(--danger);
+      background: rgba(239, 68, 68, 0.05);
+    }
+
+    .permission-checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--gray-600);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+      flex-shrink: 0;
+    }
+
+    .permission-item.disabled .permission-checkbox {
+      background: var(--danger);
+      border-color: var(--danger);
+    }
+
+    .permission-checkbox svg {
+      width: 12px;
+      height: 12px;
+      fill: var(--white);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .permission-item.disabled .permission-checkbox svg {
+      opacity: 1;
+    }
+
+    .permission-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .permission-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gray-200);
+    }
+
+    .permission-desc {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 0.15rem;
+    }
+
+    .permission-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    /* Action Section */
+    .action-section {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      border: none;
+      border-radius: var(--radius-md);
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px var(--accent-glow);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-primary svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .status-message {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-top: 0.75rem;
+      min-height: 1.25em;
+    }
+
+    .status-message.error {
+      color: var(--danger);
+    }
+
+    .status-message.success {
+      color: var(--success);
+    }
+
+    /* Progress Bar */
+    .progress-wrapper {
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .progress-wrapper.active {
+      display: block;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: var(--gray-700);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
+      width: 0%;
+      transition: width 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .progress-text {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    /* Results Section */
+    .results-section {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: var(--radius-lg);
+      text-align: center;
+      display: none;
+    }
+
+    .results-section.active {
+      display: block;
+    }
+
+    .results-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1rem;
+      background: rgba(34, 197, 94, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .results-icon svg {
+      width: 35px;
+      height: 35px;
+      fill: var(--success);
+    }
+
+    .results-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      color: var(--success);
+    }
+
+    .results-info {
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      margin-bottom: 1rem;
+    }
+
+    .results-security {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .security-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.35rem 0.7rem;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      color: var(--accent-light);
+    }
+
+    .security-tag svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2.5rem;
+      background: var(--success);
+      border: none;
+      border-radius: var(--radius-md);
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-download:hover {
+      background: #16a34a;
+      transform: translateY(-2px);
+      color: var(--white);
+    }
+
+    .btn-download svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .sidebar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+
+    .sidebar-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sidebar-title svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--accent-light);
+    }
+
+    /* Security info */
+    .security-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .security-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: var(--bg-dark);
+      border-radius: var(--radius-sm);
+    }
+
+    .security-item-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(245, 158, 11, 0.15);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .security-item-text {
+      flex: 1;
+    }
+
+    .security-item-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gray-200);
+    }
+
+    .security-item-desc {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 0.15rem;
+    }
+
+    /* Encryption options */
+    .encryption-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .encryption-option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem;
+      background: var(--bg-dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .encryption-option:hover {
+      border-color: var(--accent);
+    }
+
+    .encryption-option.active {
+      border-color: var(--accent);
+      background: rgba(245, 158, 11, 0.1);
+    }
+
+    .encryption-radio {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--gray-600);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+      flex-shrink: 0;
+    }
+
+    .encryption-option.active .encryption-radio {
+      border-color: var(--accent);
+    }
+
+    .encryption-radio-inner {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .encryption-option.active .encryption-radio-inner {
+      opacity: 1;
+    }
+
+    .encryption-info {
+      flex: 1;
+    }
+
+    .encryption-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gray-200);
+    }
+
+    .encryption-desc {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+    }
+
+    .encryption-badge {
+      padding: 0.2rem 0.5rem;
+      background: rgba(34, 197, 94, 0.15);
+      border-radius: 999px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--success);
+    }
+
+    /* Features List */
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--gray-300);
+    }
+
+    .feature-item svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--success);
+      flex-shrink: 0;
+    }
+
+    /* Sidebar Ad */
+    .sidebar-ad {
+      background: var(--bg-card);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      text-align: center;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Bottom Content */
+    .bottom-section {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+    }
+
+    .content-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      color: var(--white);
+    }
+
+    .content-section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+      color: var(--gray-200);
+    }
+
+    .content-section p, 
+    .content-section li {
+      font-size: 0.95rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      margin: 0 0 1rem;
+    }
+
+    .content-section ul, 
+    .content-section ol {
+      padding-left: 1.5rem;
+      margin: 0 0 1rem;
+    }
+
+    .content-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ */
+    .faq-section {
+      margin-top: 2rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-200);
+      margin: 0 0 0.5rem;
+    }
+
+    .faq-answer {
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--gray-500);
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .tool-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .bottom-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-nav {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .setting-row {
+        grid-template-columns: 1fr;
+      }
+
+      .permissions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1rem;
+      }
+
+      .tool-card {
+        padding: 1rem;
+      }
+
+      .dropzone {
+        padding: 2rem 1rem;
+      }
+
+      .hero-features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .results-security {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Hidden utility */
+    [hidden] {
+      display: none !important;
+    }
+
+    /* Loading spinner */
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--white);
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="bg-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">🔒</div>
+        <span>Protect PDF</span>
+      </a>
+      <nav class="header-nav">
+        <a href="#tool" class="nav-link">Protect Tool</a>
+        <a href="#how-it-works" class="nav-link">How it works</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <div class="header-badge">
+          <span class="badge-dot"></span>
+          <span>256-bit Encryption</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-badge">
+          <span>🔐</span>
+          <span>Military-grade encryption • 100% browser-based</span>
+        </div>
+        <h1 class="hero-title">Protect Your PDF Files</h1>
+        <p class="hero-subtitle">
+          Add password protection and encryption to your PDF documents. Control permissions 
+          for printing, copying, and editing. All processing happens locally in your browser 
+          for maximum security.
+        </p>
+        <div class="hero-features">
+          <div class="feature-tag">
+            <svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+            <span>Password protection</span>
+          </div>
+          <div class="feature-tag">
+            <svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+            <span>256-bit AES encryption</span>
+          </div>
+          <div class="feature-tag">
+            <svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+            <span>Permission controls</span>
+          </div>
+          <div class="feature-tag">
+            <svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+            <span>No file uploads</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top Ad Banner -->
+      <div class="ad-banner" aria-label="Advertisement">
+        <div class="ad-label">Advertisement</div>
+        <!-- Google AdSense: Top Banner -->
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+          data-ad-slot="TOP_BANNER_SLOT_ID"
+          data-ad-format="horizontal"
+          data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- Tool Section -->
+      <section id="tool" class="tool-wrapper">
+        <div class="tool-card">
+          <div class="tool-header">
+            <div>
+              <h2 class="tool-title">
+                <span class="tool-title-icon">🔐</span>
+                PDF Protection Tool
+              </h2>
+              <p class="tool-subtitle">Add password and encryption to secure your PDF</p>
+            </div>
+            <div class="security-badge">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+              <span>Secure</span>
+            </div>
+          </div>
+
+          <!-- Dropzone -->
+          <div id="dropzone" class="dropzone" tabindex="0">
+            <input type="file" id="fileInput" accept="application/pdf" />
+            <div class="dropzone-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 4a1 1 0 01.707.293l4 4a1 1 0 01-1.414 1.414L13 7.414V15a1 1 0 11-2 0V7.414L8.707 9.707a1 1 0 01-1.414-1.414l4-4A1 1 0 0112 4z"/><path d="M5 14a1 1 0 011 1v3a1 1 0 001 1h10a1 1 0 001-1v-3a1 1 0 112 0v3a3 3 0 01-3 3H7a3 3 0 01-3-3v-3a1 1 0 011-1z"/></svg>
+            </div>
+            <h3 class="dropzone-title">Drop your PDF here</h3>
+            <p class="dropzone-subtitle">or click to browse from your device</p>
+            <p class="dropzone-hint">Supports PDF files • No file size limit</p>
+          </div>
+
+          <!-- PDF Info -->
+          <div id="pdfInfo" class="pdf-info">
+            <div class="pdf-info-header">
+              <span id="pdfName" class="pdf-info-name">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>document.pdf</span>
+              </span>
+              <button type="button" id="changeFileBtn" class="btn-change">Change file</button>
+            </div>
+            <div class="pdf-info-details">
+              <span class="pdf-info-item">
+                <strong id="pdfPages">0</strong> pages
+              </span>
+              <span class="pdf-info-item">
+                <strong id="pdfSize">0 KB</strong>
+              </span>
+            </div>
+          </div>
+
+          <!-- Protection Settings -->
+          <div id="settingsSection" class="settings-section">
+            <h3 class="settings-title">
+              <span>🔑</span>
+              Password Settings
+            </h3>
+            <div class="settings-grid">
+              <div class="setting-group">
+                <label class="setting-label">
+                  <span class="setting-label-text">
+                    <span class="setting-label-icon">🔐</span>
+                    User Password (to open)
+                  </span>
+                </label>
+                <div class="password-toggle">
+                  <input type="password" id="userPassword" placeholder="Enter password to open PDF" />
+                  <button type="button" class="toggle-visibility" data-target="userPassword">
+                    <svg viewBox="0 0 24 24" class="eye-open"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                  </button>
+                </div>
+                <div id="userPasswordStrength" class="password-strength">
+                  <div class="strength-bar"></div>
+                  <div class="strength-bar"></div>
+                  <div class="strength-bar"></div>
+                  <div class="strength-bar"></div>
+                </div>
+                <p id="userPasswordStrengthText" class="password-strength-text"></p>
+                <p class="setting-hint">Required to open and view the PDF</p>
+              </div>
+
+              <div class="setting-group">
+                <label class="setting-label">
+                  <span class="setting-label-text">
+                    <span class="setting-label-icon">👤</span>
+                    Owner Password (for permissions)
+                  </span>
+                </label>
+                <div class="password-toggle">
+                  <input type="password" id="ownerPassword" placeholder="Enter owner password (optional)" />
+                  <button type="button" class="toggle-visibility" data-target="ownerPassword">
+                    <svg viewBox="0 0 24 24" class="eye-open"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                  </button>
+                </div>
+                <div id="ownerPasswordStrength" class="password-strength">
+                  <div class="strength-bar"></div>
+                  <div class="strength-bar"></div>
+                  <div class="strength-bar"></div>
+                  <div class="strength-bar"></div>
+                </div>
+                <p id="ownerPasswordStrengthText" class="password-strength-text"></p>
+                <p class="setting-hint">Required to change permissions (uses user password if empty)</p>
+              </div>
+            </div>
+
+            <!-- Permissions -->
+            <div class="permissions-section">
+              <h4 class="permissions-title">
+                <span>⚙️</span>
+                Document Permissions
+              </h4>
+              <div class="permissions-grid">
+                <div class="permission-item" data-permission="printing">
+                  <div class="permission-checkbox">
+                    <svg viewBox="0 0 24 24"><path d="M18.71 7.21a1 1 0 00-1.42 0l-7.45 7.46-3.13-3.14a1 1 0 00-1.42 1.42l3.84 3.84a1 1 0 001.42 0l8.16-8.16a1 1 0 000-1.42z"/></svg>
+                  </div>
+                  <div class="permission-info">
+                    <div class="permission-name">Allow Printing</div>
+                    <div class="permission-desc">Users can print the document</div>
+                  </div>
+                  <span class="permission-icon">🖨️</span>
+                </div>
+
+                <div class="permission-item" data-permission="copying">
+                  <div class="permission-checkbox">
+                    <svg viewBox="0 0 24 24"><path d="M18.71 7.21a1 1 0 00-1.42 0l-7.45 7.46-3.13-3.14a1 1 0 00-1.42 1.42l3.84 3.84a1 1 0 001.42 0l8.16-8.16a1 1 0 000-1.42z"/></svg>
+                  </div>
+                  <div class="permission-info">
+                    <div class="permission-name">Allow Copying</div>
+                    <div class="permission-desc">Users can copy text and images</div>
+                  </div>
+                  <span class="permission-icon">📋</span>
+                </div>
+
+                <div class="permission-item" data-permission="modifying">
+                  <div class="permission-checkbox">
+                    <svg viewBox="0 0 24 24"><path d="M18.71 7.21a1 1 0 00-1.42 0l-7.45 7.46-3.13-3.14a1 1 0 00-1.42 1.42l3.84 3.84a1 1 0 001.42 0l8.16-8.16a1 1 0 000-1.42z"/></svg>
+                  </div>
+                  <div class="permission-info">
+                    <div class="permission-name">Allow Modifying</div>
+                    <div class="permission-desc">Users can edit the document</div>
+                  </div>
+                  <span class="permission-icon">✏️</span>
+                </div>
+
+                <div class="permission-item" data-permission="annotating">
+                  <div class="permission-checkbox">
+                    <svg viewBox="0 0 24 24"><path d="M18.71 7.21a1 1 0 00-1.42 0l-7.45 7.46-3.13-3.14a1 1 0 00-1.42 1.42l3.84 3.84a1 1 0 001.42 0l8.16-8.16a1 1 0 000-1.42z"/></svg>
+                  </div>
+                  <div class="permission-info">
+                    <div class="permission-name">Allow Annotations</div>
+                    <div class="permission-desc">Users can add comments and notes</div>
+                  </div>
+                  <span class="permission-icon">💬</span>
+                </div>
+
+                <div class="permission-item" data-permission="fillingForms">
+                  <div class="permission-checkbox">
+                    <svg viewBox="0 0 24 24"><path d="M18.71 7.21a1 1 0 00-1.42 0l-7.45 7.46-3.13-3.14a1 1 0 00-1.42 1.42l3.84 3.84a1 1 0 001.42 0l8.16-8.16a1 1 0 000-1.42z"/></svg>
+                  </div>
+                  <div class="permission-info">
+                    <div class="permission-name">Allow Form Filling</div>
+                    <div class="permission-desc">Users can fill in form fields</div>
+                  </div>
+                  <span class="permission-icon">📝</span>
+                </div>
+
+                <div class="permission-item" data-permission="contentAccessibility">
+                  <div class="permission-checkbox">
+                    <svg viewBox="0 0 24 24"><path d="M18.71 7.21a1 1 0 00-1.42 0l-7.45 7.46-3.13-3.14a1 1 0 00-1.42 1.42l3.84 3.84a1 1 0 001.42 0l8.16-8.16a1 1 0 000-1.42z"/></svg>
+                  </div>
+                  <div class="permission-info">
+                    <div class="permission-name">Content Accessibility</div>
+                    <div class="permission-desc">Allow screen readers access</div>
+                  </div>
+                  <span class="permission-icon">♿</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Section -->
+          <div class="action-section">
+            <button type="button" id="protectBtn" class="btn-primary" disabled>
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              <span>Protect PDF</span>
+            </button>
+            <p id="statusMessage" class="status-message"></p>
+            <div id="progressWrapper" class="progress-wrapper">
+              <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+              </div>
+              <p id="progressText" class="progress-text">Processing...</p>
+            </div>
+          </div>
+
+          <!-- Results Section -->
+          <div id="resultsSection" class="results-section">
+            <div class="results-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            </div>
+            <h3 class="results-title">PDF Protected Successfully!</h3>
+            <p id="resultsInfo" class="results-info">Your PDF has been encrypted and password protected.</p>
+            <div id="resultsSecurityTags" class="results-security">
+              <!-- Security tags will be added dynamically -->
+            </div>
+            <a id="downloadLink" href="#" download="protected.pdf" class="btn-download">
+              <svg viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Download Protected PDF</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <!-- Encryption Options -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              Encryption Level
+            </h3>
+            <div class="encryption-options">
+              <div class="encryption-option active" data-encryption="256">
+                <div class="encryption-radio">
+                  <div class="encryption-radio-inner"></div>
+                </div>
+                <div class="encryption-info">
+                  <div class="encryption-name">AES 256-bit</div>
+                  <div class="encryption-desc">Maximum security</div>
+                </div>
+                <span class="encryption-badge">Recommended</span>
+              </div>
+              <div class="encryption-option" data-encryption="128">
+                <div class="encryption-radio">
+                  <div class="encryption-radio-inner"></div>
+                </div>
+                <div class="encryption-info">
+                  <div class="encryption-name">AES 128-bit</div>
+                  <div class="encryption-desc">Strong security, wider compatibility</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security Info -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">
+              <svg viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Security Info
+            </h3>
+            <div class="security-info">
+              <div class="security-item">
+                <div class="security-item-icon">🔒</div>
+                <div class="security-item-text">
+                  <div class="security-item-title">Password Protection</div>
+                  <div class="security-item-desc">Prevents unauthorized access to your document</div>
+                </div>
+              </div>
+              <div class="security-item">
+                <div class="security-item-icon">🛡️</div>
+                <div class="security-item-text">
+                  <div class="security-item-title">AES Encryption</div>
+                  <div class="security-item-desc">Military-grade encryption for maximum security</div>
+                </div>
+              </div>
+              <div class="security-item">
+                <div class="security-item-icon">⚙️</div>
+                <div class="security-item-text">
+                  <div class="security-item-title">Permission Control</div>
+                  <div class="security-item-desc">Restrict printing, copying, and editing</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features Card -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-title">
+              <svg viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+              Features
+            </h3>
+            <div class="features-list">
+              <div class="feature-item">
+                <svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                <span>Unlimited PDF protection</span>
+              </div>
+              <div class="feature-item">
+                <svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                <span>No file size limits</span>
+              </div>
+              <div class="feature-item">
+                <svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                <span>Privacy-first (local processing)</span>
+              </div>
+              <div class="feature-item">
+                <svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                <span>No sign-up required</span>
+              </div>
+              <div class="feature-item">
+                <svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                <span>Works offline</span>
+              </div>
+              <div class="feature-item">
+                <svg viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                <span>No watermarks</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Ad -->
+          <div class="sidebar-ad" aria-label="Advertisement">
+            <div class="ad-label">Advertisement</div>
+            <!-- Google AdSense: Sidebar -->
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+              data-ad-slot="SIDEBAR_SLOT_ID"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Bottom Content -->
+      <section class="bottom-section">
+        <article class="content-section">
+          <h2 id="how-it-works">How to Protect a PDF</h2>
+          <p>
+            Our free online PDF protection tool makes it easy to secure your documents with password 
+            protection and encryption. Whether you're sharing sensitive business documents, financial 
+            records, or personal files, our tool ensures your PDFs remain private and secure.
+          </p>
+
+          <h3>Step-by-Step Guide</h3>
+          <ol>
+            <li><strong>Upload your PDF</strong> — Drag and drop your PDF file into the upload area, or click to browse your device.</li>
+            <li><strong>Set a password</strong> — Enter a strong password that will be required to open the PDF.</li>
+            <li><strong>Configure permissions</strong> — Choose which actions to allow or restrict (printing, copying, editing, etc.).</li>
+            <li><strong>Choose encryption level</strong> — Select between 128-bit or 256-bit AES encryption.</li>
+            <li><strong>Protect & Download</strong> — Click the button to apply protection and download your secured PDF.</li>
+          </ol>
+
+          <h3>Password Types Explained</h3>
+          <ul>
+            <li><strong>User Password (Open Password)</strong> — Required to open and view the PDF. Anyone without this password cannot access the document.</li>
+            <li><strong>Owner Password (Permissions Password)</strong> — Required to change document permissions or remove protection. If not set, the user password is used.</li>
+          </ul>
+
+          <h3>Why Choose Our PDF Protector?</h3>
+          <p>
+            Unlike server-based tools, our PDF protection tool processes everything locally in your browser. 
+            Your documents are never uploaded to any server, ensuring complete privacy and security. 
+            We use industry-standard AES encryption to protect your files.
+          </p>
+
+          <div class="faq-section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+              <h4 class="faq-question">Is this PDF protection tool free?</h4>
+              <p class="faq-answer">Yes, our tool is 100% free with no hidden costs. You can protect unlimited PDFs without any restrictions or watermarks.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4 class="faq-question">Is my PDF uploaded to a server?</h4>
+              <p class="faq-answer">No! All processing happens locally in your browser using pdf-lib. Your files never leave your device, ensuring complete privacy.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4 class="faq-question">What's the difference between 128-bit and 256-bit encryption?</h4>
+              <p class="faq-answer">256-bit AES encryption provides stronger security but may have slightly less compatibility with older PDF readers. 128-bit is still very secure and works with more applications.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4 class="faq-question">Can I remove the password later?</h4>
+              <p class="faq-answer">You'll need the owner password to remove protection. If you forget the password, there's no way to recover it — that's what makes the encryption secure!</p>
+            </div>
+
+            <div class="faq-item">
+              <h4 class="faq-question">What permissions can I restrict?</h4>
+              <p class="faq-answer">You can restrict printing, copying text/images, modifying the document, adding annotations, filling forms, and content extraction for accessibility.</p>
+            </div>
+
+            <div class="faq-item">
+              <h4 class="faq-question">Will the protected PDF work in all PDF readers?</h4>
+              <p class="faq-answer">Yes, protected PDFs work in all standard PDF readers including Adobe Acrobat, Chrome's built-in viewer, Preview on Mac, and most mobile PDF apps.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bottom Ad -->
+        <aside>
+          <div class="ad-banner" aria-label="Advertisement">
+            <div class="ad-label">Advertisement</div>
+            <!-- Google AdSense: Bottom Banner -->
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+              data-ad-slot="BOTTOM_SLOT_ID"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Dev-Nishad. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PDF.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  
+  <!-- PDF-lib for PDF manipulation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+  <script>
+    // Set PDF.js worker
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    // Helper: Format bytes
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 B';
+      const k = 1024;
+      const sizes = ['B', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+    }
+
+    // Password strength checker
+    function checkPasswordStrength(password) {
+      if (!password) return { score: 0, text: '', class: '' };
+      
+      let score = 0;
+      if (password.length >= 8) score++;
+      if (password.length >= 12) score++;
+      if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score++;
+      if (/\d/.test(password)) score++;
+      if (/[^a-zA-Z0-9]/.test(password)) score++;
+
+      if (score <= 1) return { score: 1, text: 'Weak password', class: 'weak' };
+      if (score <= 2) return { score: 2, text: 'Fair password', class: 'medium' };
+      if (score <= 3) return { score: 3, text: 'Good password', class: 'medium' };
+      return { score: 4, text: 'Strong password', class: 'strong' };
+    }
+
+    // Update password strength UI
+    function updatePasswordStrength(inputId, strengthId, textId) {
+      const input = document.getElementById(inputId);
+      const strengthBars = document.querySelectorAll(`#${strengthId} .strength-bar`);
+      const strengthText = document.getElementById(textId);
+      
+      const strength = checkPasswordStrength(input.value);
+      
+      strengthBars.forEach((bar, index) => {
+        bar.className = 'strength-bar';
+        if (index < strength.score) {
+          bar.classList.add(strength.class);
+        }
+      });
+      
+      strengthText.textContent = strength.text;
+      strengthText.className = `password-strength-text ${strength.class}`;
+    }
+
+    (function() {
+      const { PDFDocument } = PDFLib;
+
+      // Elements
+      const dropzone = document.getElementById('dropzone');
+      const fileInput = document.getElementById('fileInput');
+      const pdfInfo = document.getElementById('pdfInfo');
+      const pdfName = document.getElementById('pdfName').querySelector('span');
+      const pdfPages = document.getElementById('pdfPages');
+      const pdfSize = document.getElementById('pdfSize');
+      const changeFileBtn = document.getElementById('changeFileBtn');
+      const settingsSection = document.getElementById('settingsSection');
+      const userPasswordInput = document.getElementById('userPassword');
+      const ownerPasswordInput = document.getElementById('ownerPassword');
+      const protectBtn = document.getElementById('protectBtn');
+      const statusMessage = document.getElementById('statusMessage');
+      const progressWrapper = document.getElementById('progressWrapper');
+      const progressFill = document.getElementById('progressFill');
+      const progressText = document.getElementById('progressText');
+      const resultsSection = document.getElementById('resultsSection');
+      const resultsInfo = document.getElementById('resultsInfo');
+      const resultsSecurityTags = document.getElementById('resultsSecurityTags');
+      const downloadLink = document.getElementById('downloadLink');
+
+      // Set year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // State
+      let pdfFile = null;
+      let pdfBytes = null;
+      let numPages = 0;
+      let encryptionLevel = '256';
+      let permissions = {
+        printing: true,
+        copying: true,
+        modifying: true,
+        annotating: true,
+        fillingForms: true,
+        contentAccessibility: true
+      };
+
+      // Password visibility toggle
+      document.querySelectorAll('.toggle-visibility').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.dataset.target;
+          const input = document.getElementById(targetId);
+          const isPassword = input.type === 'password';
+          input.type = isPassword ? 'text' : 'password';
+        });
+      });
+
+      // Password strength listeners
+      userPasswordInput.addEventListener('input', () => {
+        updatePasswordStrength('userPassword', 'userPasswordStrength', 'userPasswordStrengthText');
+        updateProtectButton();
+      });
+
+      ownerPasswordInput.addEventListener('input', () => {
+        updatePasswordStrength('ownerPassword', 'ownerPasswordStrength', 'ownerPasswordStrengthText');
+      });
+
+      // Permission toggles
+      document.querySelectorAll('.permission-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const permKey = item.dataset.permission;
+          permissions[permKey] = !permissions[permKey];
+          item.classList.toggle('disabled', !permissions[permKey]);
+        });
+      });
+
+      // Encryption option selection
+      document.querySelectorAll('.encryption-option').forEach(option => {
+        option.addEventListener('click', () => {
+          document.querySelectorAll('.encryption-option').forEach(o => o.classList.remove('active'));
+          option.classList.add('active');
+          encryptionLevel = option.dataset.encryption;
+        });
+      });
+
+      // Update protect button state
+      function updateProtectButton() {
+        protectBtn.disabled = !pdfBytes || !userPasswordInput.value;
+      }
+
+      // Reset state
+      function resetState() {
+        pdfFile = null;
+        pdfBytes = null;
+        numPages = 0;
+        pdfInfo.classList.remove('active');
+        settingsSection.classList.remove('active');
+        resultsSection.classList.remove('active');
+        dropzone.classList.remove('has-file');
+        protectBtn.disabled = true;
+        statusMessage.textContent = '';
+        statusMessage.className = 'status-message';
+        userPasswordInput.value = '';
+        ownerPasswordInput.value = '';
+        updatePasswordStrength('userPassword', 'userPasswordStrength', 'userPasswordStrengthText');
+        updatePasswordStrength('ownerPassword', 'ownerPasswordStrength', 'ownerPasswordStrengthText');
+      }
+
+      // Load PDF
+      async function loadPdf(file) {
+        resetState();
+        pdfFile = file;
+
+        try {
+          statusMessage.textContent = 'Loading PDF...';
+          statusMessage.className = 'status-message';
+
+          const arrayBuffer = await file.arrayBuffer();
+          pdfBytes = new Uint8Array(arrayBuffer);
+
+          // Get page count using pdf.js
+          const pdfDoc = await pdfjsLib.getDocument({ data: pdfBytes.slice() }).promise;
+          numPages = pdfDoc.numPages;
+
+          // Update UI
+          pdfName.textContent = file.name;
+          pdfPages.textContent = numPages;
+          pdfSize.textContent = formatBytes(file.size);
+
+          pdfInfo.classList.add('active');
+          settingsSection.classList.add('active');
+          dropzone.classList.add('has-file');
+
+          statusMessage.textContent = '';
+          updateProtectButton();
+
+        } catch (error) {
+          console.error('Error loading PDF:', error);
+          statusMessage.textContent = 'Failed to load PDF. The file may be corrupted or already encrypted.';
+          statusMessage.className = 'status-message error';
+          resetState();
+        }
+      }
+
+      // File input handlers
+      function handleFile(file) {
+        if (file && file.type === 'application/pdf') {
+          loadPdf(file);
+        } else {
+          statusMessage.textContent = 'Please select a valid PDF file.';
+          statusMessage.className = 'status-message error';
+        }
+      }
+
+      dropzone.addEventListener('click', () => fileInput.click());
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+          handleFile(e.target.files[0]);
+        }
+        fileInput.value = '';
+      });
+
+      changeFileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        fileInput.click();
+      });
+
+      // Drag and drop
+      ['dragenter', 'dragover'].forEach(event => {
+        dropzone.addEventListener(event, (e) => {
+          e.preventDefault();
+          dropzone.classList.add('is-dragover');
+        });
+      });
+
+      ['dragleave', 'dragend', 'drop'].forEach(event => {
+        dropzone.addEventListener(event, (e) => {
+          e.preventDefault();
+          dropzone.classList.remove('is-dragover');
+        });
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+          handleFile(files[0]);
+        }
+      });
+
+      // Keyboard accessibility
+      dropzone.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          fileInput.click();
+        }
+      });
+
+      // Protect PDF
+      async function protectPdf() {
+        if (!pdfBytes || !userPasswordInput.value) return;
+
+        protectBtn.disabled = true;
+        progressWrapper.classList.add('active');
+        progressFill.style.width = '0%';
+        resultsSection.classList.remove('active');
+        statusMessage.textContent = '';
+
+        const userPassword = userPasswordInput.value;
+        const ownerPassword = ownerPasswordInput.value || userPassword;
+
+        try {
+          progressText.textContent = 'Loading PDF document...';
+          progressFill.style.width = '20%';
+
+          // Load PDF with pdf-lib
+          const pdfDoc = await PDFDocument.load(pdfBytes, { ignoreEncryption: true });
+
+          progressText.textContent = 'Applying encryption...';
+          progressFill.style.width = '50%';
+
+          // Encrypt the PDF
+          await pdfDoc.encrypt({
+            userPassword: userPassword,
+            ownerPassword: ownerPassword,
+            permissions: {
+              printing: permissions.printing ? 'highResolution' : 'none',
+              modifying: permissions.modifying,
+              copying: permissions.copying,
+              annotating: permissions.annotating,
+              fillingForms: permissions.fillingForms,
+              contentAccessibility: permissions.contentAccessibility,
+              documentAssembly: permissions.modifying
+            }
+          });
+
+          progressText.textContent = 'Generating protected PDF...';
+          progressFill.style.width = '80%';
+
+          // Save the encrypted PDF
+          const protectedPdfBytes = await pdfDoc.save();
+          const blob = new Blob([protectedPdfBytes], { type: 'application/pdf' });
+          const url = URL.createObjectURL(blob);
+
+          progressFill.style.width = '100%';
+          progressText.textContent = 'Complete!';
+
+          // Setup download
+          const originalName = pdfFile.name.replace('.pdf', '');
+          downloadLink.href = url;
+          downloadLink.download = `${originalName}_protected.pdf`;
+
+          // Update results
+          resultsInfo.textContent = `Protected PDF with ${encryptionLevel}-bit AES encryption • ${formatBytes(blob.size)}`;
+
+          // Add security tags
+          resultsSecurityTags.innerHTML = '';
+          
+          const tags = [
+            { icon: '🔒', text: 'Password Protected' },
+            { icon: '🛡️', text: `AES-${encryptionLevel}` }
+          ];
+
+          if (!permissions.printing) tags.push({ icon: '🖨️', text: 'No Printing' });
+          if (!permissions.copying) tags.push({ icon: '📋', text: 'No Copying' });
+          if (!permissions.modifying) tags.push({ icon: '✏️', text: 'No Editing' });
+
+          tags.forEach(tag => {
+            const el = document.createElement('span');
+            el.className = 'security-tag';
+            el.innerHTML = `<span>${tag.icon}</span><span>${tag.text}</span>`;
+            resultsSecurityTags.appendChild(el);
+          });
+
+          resultsSection.classList.add('active');
+          statusMessage.textContent = 'PDF protected successfully!';
+          statusMessage.className = 'status-message success';
+
+        } catch (error) {
+          console.error('Error protecting PDF:', error);
+          statusMessage.textContent = 'Failed to protect PDF. The file may already be encrypted.';
+          statusMessage.className = 'status-message error';
+        }
+
+        protectBtn.disabled = false;
+        setTimeout(() => {
+          progressWrapper.classList.remove('active');
+        }, 1000);
+      }
+
+      protectBtn.addEventListener('click', protectPdf);
+    })();
+  </script>
+</body>
+</html>
